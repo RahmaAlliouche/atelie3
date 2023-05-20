@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menu</title>
+  <style>
+    /* Styles for the menu */
+    .menu {
+      background-color: #0ce982;
+      color: #fff;
+      padding: 25px;
+    }
+    
+    .menu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .menu ul li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    
+    .menu ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 5px 10px;
+      font-size: 25px;
+    }
+    
+    .menu ul li a:hover {
+      background-color: #0ce666;
+      
+    }
+    
+    /* Styles for the table and profile */
+    .content-container {
+      display: none;
+      margin-top: 20px;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    th, td {
+      padding: 20px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    th {
+      background-color: #f2f2f2;
+    }
+    
+    .profile-container {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 600px;
+      padding: 55px;
+      background-color: #0ce982;
+      color: #fff;
+      text-align: center;
+    }
+
+    .profile-container h2 {
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+
+    .profile-container p {
+      font-size: 35px;
+      margin-bottom: 5px;
+    }
+    
+    .profile-container .divider {
+      border-bottom: 1px solid #fff;
+      margin: 10px 0;
+    }
+  </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      const productLink = document.getElementById('product-link');
+      const profileLink = document.getElementById('profile-link');
+      const tableContainer = document.getElementById('table-container');
+      const profileContainer = document.getElementById('profile-container');
+      
+      productLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        tableContainer.style.display = 'block';
+        profileContainer.style.display = 'none';
+      });
+      
+      profileLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        tableContainer.style.display = 'none';
+        profileContainer.style.display = 'block';
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="menu">
+    <ul>
+      <li><a href="#" id="product-link">Product</a></li>
+      <li><a href="#" id="profile-link">Profile</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Services</a></li>
+    </ul>
+  </div>
+  
+  <div id="table-container" class="content-container">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+      </tr>
+      <tr>
+        <td>Product 1</td>
+        <td>$10.99</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>Product 2</td>
+        <td>$19.99</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>Product 3</td>
+        <td>$7.99</td>
+        <td>3</td>
+      </tr>
+    </table>
+</div>
+<div id="profile-container" class="content-container profile-container">
+    <p><span class="divider"></span></p>
+    <p><strong>Name:</strong>&nbsp;&nbsp;Mohamed</p>
+    <p><span class="divider"></span></p>
+    <p><strong>Prenom:</strong>&nbsp;&nbsp;All</p>
+    <p><span class="divider"></span></p>
+    <p><strong>Email:</strong>&nbsp;&nbsp;moh@gmail.com</p>
+    <p><span class="divider"></span></p>
+    <p><strong>Address:</strong>&nbsp;&nbsp;Marché boudraa salah</p>
+  </div>
+  
+<!-- Add the rest of your page content here -->
+</body>
+</html>    

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Doctor</title>
+    <style>
+        /* CSS for form elements */
+        input[type="text"],
+        input[type="email"] {
+            margin-bottom: 10px;
+        }
+        
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST" action="{% url 'add_doctor' %}">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Name"><br>
+        <input type="text" name="prenom" placeholder="Prenom"><br>
+        <input type="email" name="email" placeholder="Email"><br>
+        <input type="text" name="adress" placeholder="Adress"><br>
+        <input type="text" name="spécialité" placeholder="Spécialité"><br>
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
